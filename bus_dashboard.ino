@@ -4,7 +4,6 @@
 #include <ESP8266HTTPClient.h>
 
 
-// WiFi Parameters
 const char* ssid = "***";
 const char* password = "***";
 
@@ -15,13 +14,14 @@ typedef struct {
 
 typedef struct {
   Departure *departures[3];
-} DepartureData;
+} NextDepartures;
 
 
-DepartureData *fetch_departure_times(String from, String to);
-void draw_time_values(DepartureData **allData);
-DepartureData *merge_departures(DepartureData *destinationA, DepartureData *destinationB);
-String encodeAsURLParam(String input);
+NextDepartures *fetch_departure_times(String from, String to);
+NextDepartures *fetch_merged_times(String from, String toDestinationA, String toDestinationB);
+NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB);
+void draw_time_values(NextDepartures **allData);
+String encode_as_URLParam(String input);
 void initialize_wifi();
 
 // -----------------------------------------------------------------------
@@ -30,22 +30,18 @@ void setup(void) {
   epd_init(2, 3);
   epd_wakeup(3);
   epd_set_memory(MEM_NAND);
-
   epd_clear();
+
   initialize_wifi();
 
-  DepartureData *allData[6];
-  allData[0] = fetch_departure_times("Zürich, Schumacherweg", "Zürich, Triemlispital");
-  allData[1] = fetch_departure_times("Zürich, Schumacherweg", "Zürich, Bahnhof Oerlikon Nord");
-
-  allData[2] = fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Strassenverkehrsamt");
-  allData[3] = fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Holzerhurd");
-
-  allData[4] = fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Schwamendingerplatz");
-
-  DepartureData *waidhof = fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Waidhof");
-  DepartureData *muehlacker = fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Mühlacker");
-  allData[5] = merge_departures(waidhof, muehlacker);
+  NextDepartures *allData[] = {
+    fetch_departure_times("Zürich, Schumacherweg", "Zürich, Triemlispital"),
+    fetch_departure_times("Zürich, Schumacherweg", "Zürich, Bahnhof Oerlikon Nord"),
+    fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Strassenverkehrsamt"),
+    fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Holzerhurd"),
+    fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Schwamendingerplatz"),
+    fetch_merged_times("Zürich, Glaubtenstrasse", "Zürich, Waidhof", "Zürich, Mühlacker")
+  };
 
   draw_time_values(allData);
   epd_udpate();
@@ -57,12 +53,12 @@ void loop(void) { }
 
 // -----------------------------------------------------------------------
 
-DepartureData *fetch_departure_times(String from, String to) {
-  Serial.println("Fetching: " + from + ", " + to);
+NextDepartures *fetch_departure_times(String from, String to) {
   HTTPClient http;
-  String url = "http://bananas.cloud.tyk.io/transport?from="+ encodeAsURLParam(from) +"&to="+ encodeAsURLParam(to) +"&num=3&show_delays=1";
+  String url = "http://bananas.cloud.tyk.io/transport?from="+ encode_as_URLParam(from) +"&to="+ encode_as_URLParam(to) +"&num=3&show_delays=1";
   http.begin(url);
-  DepartureData *departureData = (DepartureData*) malloc(sizeof(DepartureData));
+  
+  NextDepartures *nextDepartures = (NextDepartures*) malloc(sizeof(NextDepartures));
   
   if (http.GET() > 0) {
     String jsonPayload = http.getString();
@@ -83,28 +79,28 @@ DepartureData *fetch_departure_times(String from, String to) {
       departureTime.remove(5, 3); // remove seconds
       String departureDelay = connection["departure_delay"];
 
-      departureData->departures[i] = (Departure*) malloc(sizeof(Departure));
-      departureData->departures[i]->departureTime = (char*) malloc((departureTime.length() + 1) * sizeof(char)); 
-      strcpy(departureData->departures[i]->departureTime, departureTime.c_str());
+      nextDepartures->departures[i] = (Departure*) malloc(sizeof(Departure));
+      nextDepartures->departures[i]->departureTime = (char*) malloc((departureTime.length() + 1) * sizeof(char)); 
+      strcpy(nextDepartures->departures[i]->departureTime, departureTime.c_str());
 
-      departureData->departures[i]->departureDelay = (char*) malloc((departureDelay.length() + 1) * sizeof(char)); 
-      strcpy(departureData->departures[i]->departureDelay, departureDelay.c_str());
+      nextDepartures->departures[i]->departureDelay = (char*) malloc((departureDelay.length() + 1) * sizeof(char)); 
+      strcpy(nextDepartures->departures[i]->departureDelay, departureDelay.c_str());
     }
   } else {
     Serial.println("Error while fetching.");
+    // Blink LED or something
   }
   http.end();
-  return departureData;
+  return nextDepartures;
 }
 
-void draw_time_values(DepartureData **allData) {
-  int offsetXFirstColumn = 22;
-  int offsetXSecondColumn = 403;
-  
-  int offsetYFirstBlock = 95;
-  int offsetYSecondBlock = 285;
-  int offsetYThirdBlock = 480;
-  
+NextDepartures *fetch_merged_times(String from, String toDestinationA, String toDestinationB) {
+  NextDepartures *departuresToDestinationA = fetch_departure_times(from, toDestinationA);
+  NextDepartures *departuresToDestinationB = fetch_departure_times(from, toDestinationB);
+  return merge_departures(departuresToDestinationA, departuresToDestinationB);
+}
+
+void draw_time_values(NextDepartures **allData) {  
   epd_disp_bitmap("HEAD2.BMP", 0, 0);
   epd_disp_bitmap("HEAD1.BMP", 0, 188);
   epd_disp_bitmap("HEAD3.BMP", 0, 382);
@@ -112,37 +108,21 @@ void draw_time_values(DepartureData **allData) {
   epd_set_color(BLACK, WHITE);
   epd_set_en_font(ASCII32);
 
-  //draw triemli connections
-  for (int i = 0; i < 3; i++) {
-    epd_disp_string(allData[0]->departures[i]->departureTime, offsetXFirstColumn, offsetYFirstBlock + (i * 35));
-    epd_disp_string(allData[0]->departures[i]->departureDelay, offsetXFirstColumn + 138, offsetYFirstBlock + (i * 35));
-  }
-  //draw oerlikon connections
-  for (int i = 0; i < 3; i++) {
-    epd_disp_string(allData[1]->departures[i]->departureTime, offsetXSecondColumn, offsetYFirstBlock + (i * 35));
-    epd_disp_string(allData[1]->departures[i]->departureDelay, offsetXSecondColumn + 138, offsetYFirstBlock + (i * 35));
-  }
+  int offsetXFirstColumn = 22, offsetXSecondColumn = 403, offsetXDelay = 138;
+  int rowSpace = 35;
+  
+  for (int i = 0; i < 6; i += 2) {
+    for (int j = 0; j < 3; j++) {
+      int originY = (i/2 * 190) + 95;
+      
+      //first column
+      epd_disp_string(allData[i]->departures[j]->departureTime, offsetXFirstColumn, originY + (j * rowSpace));
+      epd_disp_string(allData[i]->departures[j]->departureDelay, offsetXFirstColumn + offsetXDelay, originY + (j * rowSpace));
 
-  //draw strassenverkehrsamt connections
-  for (int i = 0; i < 3; i++) {
-    epd_disp_string(allData[2]->departures[i]->departureTime, offsetXFirstColumn, offsetYSecondBlock + (i * 35));
-    epd_disp_string(allData[2]->departures[i]->departureDelay, offsetXFirstColumn + 138, offsetYSecondBlock + (i * 35));
-  }
-  //draw holzerhurd connections
-  for (int i = 0; i < 3; i++) {
-    epd_disp_string(allData[3]->departures[i]->departureTime, offsetXSecondColumn, offsetYSecondBlock + (i * 35));
-    epd_disp_string(allData[3]->departures[i]->departureDelay, offsetXSecondColumn + 138, offsetYSecondBlock + (i * 35));
-  }
-
-  //draw schwammendingerplatz connections
-  for (int i = 0; i < 3; i++) {
-    epd_disp_string(allData[4]->departures[i]->departureTime, offsetXFirstColumn, offsetYThirdBlock + (i * 35));
-    epd_disp_string(allData[4]->departures[i]->departureDelay, offsetXFirstColumn + 138, offsetYThirdBlock + (i * 35));
-  }
-  //draw waidhof / muehlacker connections
-  for (int i = 0; i < 3; i++) {
-    epd_disp_string(allData[5]->departures[i]->departureTime, offsetXSecondColumn, offsetYThirdBlock + (i * 35));
-    epd_disp_string(allData[5]->departures[i]->departureDelay, offsetXSecondColumn + 138, offsetYThirdBlock + (i * 35));
+      //second column
+      epd_disp_string(allData[i+1]->departures[j]->departureTime, offsetXSecondColumn, originY + (j * rowSpace));
+      epd_disp_string(allData[i+1]->departures[j]->departureDelay, offsetXSecondColumn + offsetXDelay, originY + (j * rowSpace));
+    }
   }
 
 /*
@@ -153,37 +133,37 @@ void draw_time_values(DepartureData **allData) {
 */
 }
 
-int sort_desc(const void *a, const void *b) {
+int sort_ascending(const void *a, const void *b) {
   Departure *ia = *(Departure **) a;
   Departure *ib = *(Departure **) b;
   return strcmp(ia->departureTime, ib->departureTime);
 }
 
-DepartureData *merge_departures(DepartureData *destinationA, DepartureData *destinationB) {
+NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB) {
   Departure *mergedDepartures[6];
 
-  mergedDepartures[0] = destinationA->departures[0];
-  mergedDepartures[1] = destinationA->departures[1];
-  mergedDepartures[2] = destinationA->departures[2];
-  mergedDepartures[3] = destinationB->departures[0];
-  mergedDepartures[4] = destinationB->departures[1];
-  mergedDepartures[5] = destinationB->departures[2];
+  mergedDepartures[0] = toDestinationA->departures[0];
+  mergedDepartures[1] = toDestinationA->departures[1];
+  mergedDepartures[2] = toDestinationA->departures[2];
+  mergedDepartures[3] = toDestinationB->departures[0];
+  mergedDepartures[4] = toDestinationB->departures[1];
+  mergedDepartures[5] = toDestinationB->departures[2];
 
-  int lt_length = sizeof(mergedDepartures) / sizeof(mergedDepartures[0]);
-  qsort(mergedDepartures, lt_length, sizeof(mergedDepartures[0]), sort_desc);
+  int array_length = sizeof(mergedDepartures) / sizeof(mergedDepartures[0]);
+  qsort(mergedDepartures, array_length, sizeof(mergedDepartures[0]), sort_ascending);
 
-  DepartureData *mergedDepartureData = (DepartureData*) malloc(sizeof(DepartureData));
-
+  NextDepartures *mergedNextDepartures = (NextDepartures*) malloc(sizeof(NextDepartures));
   for (int i = 0; i < 3; i++) {
-    mergedDepartureData->departures[i] = (Departure*) malloc(sizeof(Departure));
-    mergedDepartureData->departures[i]->departureTime = mergedDepartures[i]->departureTime;
-    mergedDepartureData->departures[i]->departureDelay = mergedDepartures[i]->departureDelay;
+    mergedNextDepartures->departures[i] = (Departure*) malloc(sizeof(Departure));
+    mergedNextDepartures->departures[i]->departureTime = mergedDepartures[i]->departureTime;
+    mergedNextDepartures->departures[i]->departureDelay = mergedDepartures[i]->departureDelay;
   }
   
-  return mergedDepartureData;
+  return mergedNextDepartures;
 }
 
 void initialize_wifi() {
+  // TODO: Can be split up in triggering the connection and waiting
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(200);
@@ -192,7 +172,7 @@ void initialize_wifi() {
 }
 
 // Copied from https://github.com/zenmanenergy/ESP8266-Arduino-Examples/blob/master/helloWorld_urlencoded/urlencode.ino
-String encodeAsURLParam(String input) {
+String encode_as_URLParam(String input) {
     String encodedString="";
     char c;
     char code0;
