@@ -3,7 +3,7 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
-
+#define TESTING true
 const char* ssid = "***";
 const char* password = "***";
 
@@ -20,9 +20,11 @@ typedef struct {
 NextDepartures *fetch_departure_times(String from, String to);
 NextDepartures *fetch_merged_times(String from, String toDestinationA, String toDestinationB);
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB);
-void draw_time_values(NextDepartures **allData);
+String fetchCurrentTime(String timezone);
+void draw_time_values(NextDepartures **allData, String currentTime);
 String encode_as_URLParam(String input);
 void initialize_wifi();
+void logMessage(String message);
 
 // -----------------------------------------------------------------------
 
@@ -34,7 +36,7 @@ void setup(void) {
 
   initialize_wifi();
 
-  NextDepartures *allData[] = {
+  NextDepartures *allDepartureData[] = {
     fetch_departure_times("Zürich, Schumacherweg", "Zürich, Triemlispital"),
     fetch_departure_times("Zürich, Schumacherweg", "Zürich, Bahnhof Oerlikon Nord"),
     fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Strassenverkehrsamt"),
@@ -42,8 +44,9 @@ void setup(void) {
     fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Schwamendingerplatz"),
     fetch_merged_times("Zürich, Glaubtenstrasse", "Zürich, Waidhof", "Zürich, Mühlacker")
   };
+  String currentTime = fetchCurrentTime("Europe/Zurich");
 
-  draw_time_values(allData);
+  draw_time_values(allDepartureData, currentTime);
   epd_udpate();
 
   // shutdown
@@ -75,6 +78,7 @@ NextDepartures *fetch_departure_times(String from, String to) {
       }
       JsonObject connection = connections[i];
       String departureTime = connection["departure"];
+      // Example: 2019-08-15 18:17:00
       departureTime.remove(0, 11); // remove date
       departureTime.remove(5, 3); // remove seconds
       String departureDelay = connection["departure_delay"];
@@ -87,7 +91,7 @@ NextDepartures *fetch_departure_times(String from, String to) {
       strcpy(nextDepartures->departures[i]->departureDelay, departureDelay.c_str());
     }
   } else {
-    Serial.println("Error while fetching.");
+    logMessage("Error while fetching.");
     // Blink LED or something
   }
   http.end();
@@ -100,7 +104,7 @@ NextDepartures *fetch_merged_times(String from, String toDestinationA, String to
   return merge_departures(departuresToDestinationA, departuresToDestinationB);
 }
 
-void draw_time_values(NextDepartures **allData) {  
+void draw_time_values(NextDepartures **allData, String currentTime) {  
   epd_disp_bitmap("HEAD2.BMP", 0, 0);
   epd_disp_bitmap("HEAD1.BMP", 0, 188);
   epd_disp_bitmap("HEAD3.BMP", 0, 382);
@@ -125,12 +129,8 @@ void draw_time_values(NextDepartures **allData) {
     }
   }
 
-/*
   epd_set_en_font(ASCII48);
-  char timeBuffer[6];
-  sprintf(timeBuffer,"%02u:%02u",(now.hour()), now.minute());
-  epd_disp_string(timeBuffer, 670, 5);
-*/
+  epd_disp_string(currentTime.c_str(), 670, 5);
 }
 
 int sort_ascending(const void *a, const void *b) {
@@ -162,13 +162,45 @@ NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures 
   return mergedNextDepartures;
 }
 
+String fetchCurrentTime(String timezone) {
+  HTTPClient http;
+  String url = "http://worldtimeapi.org/api/timezone/" + timezone;
+  http.begin(url);
+  String currentTime;
+  
+  if (http.GET() > 0) {
+    String jsonPayload = http.getString();
+    const size_t capacity = JSON_OBJECT_SIZE(15) + 350;
+    DynamicJsonDocument doc(capacity);
+    deserializeJson(doc, jsonPayload);
+
+    String currentTimestamp = doc["datetime"];
+    //Example: 2019-08-15T17:28:12.798760+02:00
+    currentTimestamp.remove(0, 11); // remove date
+    currentTimestamp.remove(5, 16); // remove seconds
+
+    currentTime = currentTimestamp;
+  } else {
+    logMessage("Error while fetching.");
+    // Blink LED or something
+  }
+  http.end();
+  return currentTime;
+}
+
 void initialize_wifi() {
   // TODO: Can be split up in triggering the connection and waiting
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(200);
-    Serial.println("Connecting...");
+    logMessage("Connecting...");
   }
+}
+
+void logMessage(String message) {
+  #ifdef TESTING
+    Serial.println(message);
+  #endif
 }
 
 // Copied from https://github.com/zenmanenergy/ESP8266-Arduino-Examples/blob/master/helloWorld_urlencoded/urlencode.ino
