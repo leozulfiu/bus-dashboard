@@ -15,6 +15,7 @@ A dashboard showing the latest bus departures from configured stations in switze
 ## Todo
 
 - [ ] Show when the bus actually arrives ("Arrives in x minutes...")
+- [ ] Max retries of wlan connection attempts
 - [ ] Show basic weather infos
 - [ ] Decide if the deep sleep mode should be used or a latching power switch circuit
 
