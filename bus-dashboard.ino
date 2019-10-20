@@ -9,7 +9,7 @@ const char* password = "***";
 
 typedef struct {
   tm *departureTime;
-  char *departureDelay;
+  tm *departureDelay;
 } Departure;
 
 typedef struct {
@@ -25,6 +25,7 @@ void draw_time_values(NextDepartures **allData, String currentTime);
 String encode_as_URLParam(String input);
 void initialize_wifi();
 String timeAsString(tm *tm);
+String minAsString(tm *tm);
 void logMessage(String message);
 
 // -----------------------------------------------------------------------
@@ -88,8 +89,9 @@ NextDepartures *fetch_departure_times(String from, String to) {
       nextDepartures->departures[i]->departureTime = (tm*) malloc(sizeof(tm));
       strptime(departureTime.c_str(), "%H:%M", nextDepartures->departures[i]->departureTime);
 
-      nextDepartures->departures[i]->departureDelay = (char*) malloc((departureDelay.length() + 1) * sizeof(char)); 
-      strcpy(nextDepartures->departures[i]->departureDelay, departureDelay.c_str());
+      departureDelay.remove(0, 1); // remove plus
+      nextDepartures->departures[i]->departureDelay = (tm*) malloc(sizeof(tm));
+      strptime(departureDelay.c_str(), "%M", nextDepartures->departures[i]->departureDelay);
     }
   } else {
     logMessage("Error while fetching.");
@@ -122,11 +124,12 @@ void draw_time_values(NextDepartures **allData, String currentTime) {
       
       //first column
       epd_disp_string(timeAsString(allData[i]->departures[j]->departureTime).c_str(), offsetXFirstColumn, originY + (j * rowSpace));
-      epd_disp_string(allData[i]->departures[j]->departureDelay, offsetXFirstColumn + offsetXDelay, originY + (j * rowSpace));
+      epd_disp_string(minAsString(allData[i]->departures[j]->departureDelay).c_str(), offsetXFirstColumn + offsetXDelay, originY + (j * rowSpace));
 
       //second column
       epd_disp_string(timeAsString(allData[i+1]->departures[j]->departureTime).c_str(), offsetXSecondColumn, originY + (j * rowSpace));
-      epd_disp_string(allData[i+1]->departures[j]->departureDelay, offsetXSecondColumn + offsetXDelay, originY + (j * rowSpace));
+      epd_disp_string(minAsString(allData[i+1]->departures[j]->departureDelay).c_str(), offsetXSecondColumn + offsetXDelay, originY + (j * rowSpace));
+
     }
   }
 
@@ -209,6 +212,10 @@ void logMessage(String message) {
 
 String timeAsString(tm *tm) {
   return String(String(tm->tm_hour) + ":" + String(tm->tm_min));
+}
+
+String minAsString(tm *tm) {
+  return String("+") + String(tm->tm_min);
 }
 
 // Copied from https://github.com/zenmanenergy/ESP8266-Arduino-Examples/blob/master/helloWorld_urlencoded/urlencode.ino
