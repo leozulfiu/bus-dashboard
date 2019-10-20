@@ -8,7 +8,7 @@ const char* ssid = "***";
 const char* password = "***";
 
 typedef struct {
-  char *departureTime;
+  tm *departureTime;
   char *departureDelay;
 } Departure;
 
@@ -24,6 +24,7 @@ String fetchCurrentTime(String timezone);
 void draw_time_values(NextDepartures **allData, String currentTime);
 String encode_as_URLParam(String input);
 void initialize_wifi();
+String timeAsString(tm *tm);
 void logMessage(String message);
 
 // -----------------------------------------------------------------------
@@ -76,6 +77,7 @@ NextDepartures *fetch_departure_times(String from, String to) {
         // The API can sometimes return more or less than the maximum values of connections we want
         break;
       }
+      nextDepartures->departures[i] = (Departure*) malloc(sizeof(Departure));
       JsonObject connection = connections[i];
       String departureTime = connection["departure"];
       // Example: 2019-08-15 18:17:00
@@ -83,9 +85,8 @@ NextDepartures *fetch_departure_times(String from, String to) {
       departureTime.remove(5, 3); // remove seconds
       String departureDelay = connection["departure_delay"];
 
-      nextDepartures->departures[i] = (Departure*) malloc(sizeof(Departure));
-      nextDepartures->departures[i]->departureTime = (char*) malloc((departureTime.length() + 1) * sizeof(char)); 
-      strcpy(nextDepartures->departures[i]->departureTime, departureTime.c_str());
+      nextDepartures->departures[i]->departureTime = (tm*) malloc(sizeof(tm));
+      strptime(departureTime.c_str(), "%H:%M", nextDepartures->departures[i]->departureTime);
 
       nextDepartures->departures[i]->departureDelay = (char*) malloc((departureDelay.length() + 1) * sizeof(char)); 
       strcpy(nextDepartures->departures[i]->departureDelay, departureDelay.c_str());
@@ -104,7 +105,7 @@ NextDepartures *fetch_merged_times(String from, String toDestinationA, String to
   return merge_departures(departuresToDestinationA, departuresToDestinationB);
 }
 
-void draw_time_values(NextDepartures **allData, String currentTime) {  
+void draw_time_values(NextDepartures **allData, String currentTime) {
   epd_disp_bitmap("HEAD2.BMP", 0, 0);
   epd_disp_bitmap("HEAD1.BMP", 0, 188);
   epd_disp_bitmap("HEAD3.BMP", 0, 382);
@@ -120,11 +121,11 @@ void draw_time_values(NextDepartures **allData, String currentTime) {
       int originY = (i/2 * 190) + 95;
       
       //first column
-      epd_disp_string(allData[i]->departures[j]->departureTime, offsetXFirstColumn, originY + (j * rowSpace));
+      epd_disp_string(timeAsString(allData[i]->departures[j]->departureTime).c_str(), offsetXFirstColumn, originY + (j * rowSpace));
       epd_disp_string(allData[i]->departures[j]->departureDelay, offsetXFirstColumn + offsetXDelay, originY + (j * rowSpace));
 
       //second column
-      epd_disp_string(allData[i+1]->departures[j]->departureTime, offsetXSecondColumn, originY + (j * rowSpace));
+      epd_disp_string(timeAsString(allData[i+1]->departures[j]->departureTime).c_str(), offsetXSecondColumn, originY + (j * rowSpace));
       epd_disp_string(allData[i+1]->departures[j]->departureDelay, offsetXSecondColumn + offsetXDelay, originY + (j * rowSpace));
     }
   }
@@ -136,12 +137,15 @@ void draw_time_values(NextDepartures **allData, String currentTime) {
 int sort_ascending(const void *a, const void *b) {
   Departure *ia = *(Departure **) a;
   Departure *ib = *(Departure **) b;
-  return strcmp(ia->departureTime, ib->departureTime);
+
+  // TODO: Implement time compare function instead of relying on string comparision
+  return strcmp(timeAsString(ia->departureTime).c_str(), timeAsString(ib->departureTime).c_str());
 }
 
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB) {
   Departure *mergedDepartures[6];
 
+  // TODO: Can be probably simplified
   mergedDepartures[0] = toDestinationA->departures[0];
   mergedDepartures[1] = toDestinationA->departures[1];
   mergedDepartures[2] = toDestinationA->departures[2];
@@ -177,7 +181,7 @@ String fetchCurrentTime(String timezone) {
     String currentTimestamp = doc["datetime"];
     //Example: 2019-08-15T17:28:12.798760+02:00
     currentTimestamp.remove(0, 11); // remove date
-    currentTimestamp.remove(5, 16); // remove seconds
+    currentTimestamp.remove(5, 16); // remove seconds and rest
 
     currentTime = currentTimestamp;
   } else {
@@ -201,6 +205,10 @@ void logMessage(String message) {
   #ifdef TESTING
     Serial.println(message);
   #endif
+}
+
+String timeAsString(tm *tm) {
+  return String(String(tm->tm_hour) + ":" + String(tm->tm_min));
 }
 
 // Copied from https://github.com/zenmanenergy/ESP8266-Arduino-Examples/blob/master/helloWorld_urlencoded/urlencode.ino
