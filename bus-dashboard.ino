@@ -8,8 +8,9 @@ const char* ssid = "***";
 const char* password = "***";
 
 typedef struct {
-  tm *departureTime;
-  tm *departureDelay;
+  time_t *departureDateTime;
+  int departureDelay;
+  int leavesInMins;
 } Departure;
 
 typedef struct {
@@ -20,12 +21,13 @@ typedef struct {
 NextDepartures *fetch_departure_times(String from, String to);
 NextDepartures *fetch_merged_times(String from, String toDestinationA, String toDestinationB);
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB);
-String fetchCurrentTime(String timezone);
-void draw_time_values(NextDepartures **allData, String currentTime);
+time_t fetchCurrentTime(String timezone);
+void draw_time_values(NextDepartures **allData, time_t currentTime);
+void calculateArrivalTimes(NextDepartures **allData, time_t currentTime);
 String encode_as_URLParam(String input);
 void initialize_wifi();
-String timeAsString(tm *tm);
-String minAsString(tm *tm);
+String timeAsString(time_t *theTime);
+String minAsString(int delayInMinutes);
 void logMessage(String message);
 
 // -----------------------------------------------------------------------
@@ -46,11 +48,14 @@ void setup(void) {
     fetch_departure_times("Zürich, Glaubtenstrasse", "Zürich, Schwamendingerplatz"),
     fetch_merged_times("Zürich, Glaubtenstrasse", "Zürich, Waidhof", "Zürich, Mühlacker")
   };
-  String currentTime = fetchCurrentTime("Europe/Zurich");
 
+  time_t currentTime = fetchCurrentTime("Europe/Zurich");
+
+  //calculateArrivalTimes(allDepartureData, currentTime);
+  
   draw_time_values(allDepartureData, currentTime);
+  
   epd_udpate();
-
   // shutdown
 }
 
@@ -80,18 +85,18 @@ NextDepartures *fetch_departure_times(String from, String to) {
       }
       nextDepartures->departures[i] = (Departure*) malloc(sizeof(Departure));
       JsonObject connection = connections[i];
-      String departureTime = connection["departure"];
-      // Example: 2019-08-15 18:17:00
-      departureTime.remove(0, 11); // remove date
-      departureTime.remove(5, 3); // remove seconds
+      String departureDateTime = connection["departure"];
       String departureDelay = connection["departure_delay"];
 
-      nextDepartures->departures[i]->departureTime = (tm*) malloc(sizeof(tm));
-      strptime(departureTime.c_str(), "%H:%M", nextDepartures->departures[i]->departureTime);
+      // Example: 2019-08-15 18:17:00
+      nextDepartures->departures[i]->departureDateTime = (time_t*) malloc(sizeof(time_t));
+      struct tm rawDT = {0};
+      strptime(departureDateTime.c_str(), "%Y-%m-%d %T", &rawDT);
+      time_t parsedDT = mktime(&rawDT);
+      memcpy(nextDepartures->departures[i]->departureDateTime, &parsedDT, sizeof(time_t));
 
       departureDelay.remove(0, 1); // remove plus
-      nextDepartures->departures[i]->departureDelay = (tm*) malloc(sizeof(tm));
-      strptime(departureDelay.c_str(), "%M", nextDepartures->departures[i]->departureDelay);
+      nextDepartures->departures[i]->departureDelay = strtol(departureDelay.c_str(), NULL, 10);
     }
   } else {
     logMessage("Error while fetching.");
@@ -107,7 +112,14 @@ NextDepartures *fetch_merged_times(String from, String toDestinationA, String to
   return merge_departures(departuresToDestinationA, departuresToDestinationB);
 }
 
-void draw_time_values(NextDepartures **allData, String currentTime) {
+void calculateArrivalTimes(NextDepartures **allData, time_t currentTime) {
+  for(int i = 0; i < 6; i++) {
+    for(int j = 0; j < 3; j++) {
+    }
+  }
+}
+
+void draw_time_values(NextDepartures **allData, time_t currentTime) {
   epd_disp_bitmap("HEAD2.BMP", 0, 0);
   epd_disp_bitmap("HEAD1.BMP", 0, 188);
   epd_disp_bitmap("HEAD3.BMP", 0, 382);
@@ -123,18 +135,17 @@ void draw_time_values(NextDepartures **allData, String currentTime) {
       int originY = (i/2 * 190) + 95;
       
       //first column
-      epd_disp_string(timeAsString(allData[i]->departures[j]->departureTime).c_str(), offsetXFirstColumn, originY + (j * rowSpace));
+      epd_disp_string(timeAsString(allData[i]->departures[j]->departureDateTime).c_str(), offsetXFirstColumn, originY + (j * rowSpace));
       epd_disp_string(minAsString(allData[i]->departures[j]->departureDelay).c_str(), offsetXFirstColumn + offsetXDelay, originY + (j * rowSpace));
 
       //second column
-      epd_disp_string(timeAsString(allData[i+1]->departures[j]->departureTime).c_str(), offsetXSecondColumn, originY + (j * rowSpace));
+      epd_disp_string(timeAsString(allData[i+1]->departures[j]->departureDateTime).c_str(), offsetXSecondColumn, originY + (j * rowSpace));
       epd_disp_string(minAsString(allData[i+1]->departures[j]->departureDelay).c_str(), offsetXSecondColumn + offsetXDelay, originY + (j * rowSpace));
-
     }
   }
 
   epd_set_en_font(ASCII48);
-  epd_disp_string(currentTime.c_str(), 670, 5);
+  epd_disp_string(timeAsString(&currentTime).c_str(), 670, 5);
 }
 
 int sort_ascending(const void *a, const void *b) {
@@ -142,7 +153,7 @@ int sort_ascending(const void *a, const void *b) {
   Departure *ib = *(Departure **) b;
 
   // TODO: Implement time compare function instead of relying on string comparision
-  return strcmp(timeAsString(ia->departureTime).c_str(), timeAsString(ib->departureTime).c_str());
+  return strcmp(timeAsString(ia->departureDateTime).c_str(), timeAsString(ib->departureDateTime).c_str());
 }
 
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB) {
@@ -162,18 +173,18 @@ NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures 
   NextDepartures *mergedNextDepartures = (NextDepartures*) malloc(sizeof(NextDepartures));
   for (int i = 0; i < 3; i++) {
     mergedNextDepartures->departures[i] = (Departure*) malloc(sizeof(Departure));
-    mergedNextDepartures->departures[i]->departureTime = mergedDepartures[i]->departureTime;
+    mergedNextDepartures->departures[i]->departureDateTime = mergedDepartures[i]->departureDateTime;
     mergedNextDepartures->departures[i]->departureDelay = mergedDepartures[i]->departureDelay;
   }
   
   return mergedNextDepartures;
 }
 
-String fetchCurrentTime(String timezone) {
+time_t fetchCurrentTime(String timezone) {
   HTTPClient http;
   String url = "http://worldtimeapi.org/api/timezone/" + timezone;
   http.begin(url);
-  String currentTime;
+  time_t currentTime = {0};
   
   if (http.GET() > 0) {
     String jsonPayload = http.getString();
@@ -183,10 +194,11 @@ String fetchCurrentTime(String timezone) {
 
     String currentTimestamp = doc["datetime"];
     //Example: 2019-08-15T17:28:12.798760+02:00
-    currentTimestamp.remove(0, 11); // remove date
-    currentTimestamp.remove(5, 16); // remove seconds and rest
+    currentTimestamp.remove(19, 13); // strip off microseconds and rest
 
-    currentTime = currentTimestamp;
+    struct tm rawDT = {0};
+    strptime(currentTimestamp.c_str(), "%Y-%m-%dT%T", &rawDT);
+    currentTime = mktime(&rawDT);
   } else {
     logMessage("Error while fetching.");
     // Blink LED or something
@@ -210,12 +222,12 @@ void logMessage(String message) {
   #endif
 }
 
-String timeAsString(tm *tm) {
-  return String(String(tm->tm_hour) + ":" + String(tm->tm_min));
+String timeAsString(time_t *theTime) {
+  return String(String(localtime(theTime)->tm_hour) + ":" + String(localtime(theTime)->tm_min));
 }
 
-String minAsString(tm *tm) {
-  return String("+") + String(tm->tm_min);
+String minAsString(int delayInMinutes) {
+  return String("+") + String(delayInMinutes);
 }
 
 // Copied from https://github.com/zenmanenergy/ESP8266-Arduino-Examples/blob/master/helloWorld_urlencoded/urlencode.ino
