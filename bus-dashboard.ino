@@ -26,8 +26,8 @@ void draw_time_values(NextDepartures **allData, time_t currentTime);
 void calculateArrivalTimes(NextDepartures **allData, time_t currentTime);
 String encode_as_URLParam(String input);
 void initialize_wifi();
-String timeAsString(time_t *theTime);
-String minAsString(int delayInMinutes);
+String formatTime(time_t *theTime);
+String formatLeavesInMins(int delayInMinutes);
 void logMessage(String message);
 
 // -----------------------------------------------------------------------
@@ -51,7 +51,7 @@ void setup(void) {
 
   time_t currentTime = fetchCurrentTime("Europe/Zurich");
 
-  //calculateArrivalTimes(allDepartureData, currentTime);
+  calculateArrivalTimes(allDepartureData, currentTime);
   
   draw_time_values(allDepartureData, currentTime);
   
@@ -115,6 +115,15 @@ NextDepartures *fetch_merged_times(String from, String toDestinationA, String to
 void calculateArrivalTimes(NextDepartures **allData, time_t currentTime) {
   for(int i = 0; i < 6; i++) {
     for(int j = 0; j < 3; j++) {
+      double diffSeconds = difftime(*allData[i]->departures[j]->departureDateTime, currentTime);
+      diffSeconds += allData[i]->departures[j]->departureDelay;
+      int diffMinutes = (int) floor(diffSeconds / 60);
+      
+      if (diffMinutes <= 0) {
+        allData[i]->departures[j]->leavesInMins = 0;
+      } else {
+        allData[i]->departures[j]->leavesInMins = diffMinutes;
+      }
     }
   }
 }
@@ -135,17 +144,17 @@ void draw_time_values(NextDepartures **allData, time_t currentTime) {
       int originY = (i/2 * 190) + 95;
       
       //first column
-      epd_disp_string(timeAsString(allData[i]->departures[j]->departureDateTime).c_str(), offsetXFirstColumn, originY + (j * rowSpace));
-      epd_disp_string(minAsString(allData[i]->departures[j]->departureDelay).c_str(), offsetXFirstColumn + offsetXDelay, originY + (j * rowSpace));
+      epd_disp_string(formatTime(allData[i]->departures[j]->departureDateTime).c_str(), offsetXFirstColumn, originY + (j * rowSpace));
+      epd_disp_string(formatLeavesInMins(allData[i]->departures[j]->leavesInMins).c_str(), offsetXFirstColumn + offsetXDelay, originY + (j * rowSpace));
 
       //second column
-      epd_disp_string(timeAsString(allData[i+1]->departures[j]->departureDateTime).c_str(), offsetXSecondColumn, originY + (j * rowSpace));
-      epd_disp_string(minAsString(allData[i+1]->departures[j]->departureDelay).c_str(), offsetXSecondColumn + offsetXDelay, originY + (j * rowSpace));
+      epd_disp_string(formatTime(allData[i+1]->departures[j]->departureDateTime).c_str(), offsetXSecondColumn, originY + (j * rowSpace));
+      epd_disp_string(formatLeavesInMins(allData[i+1]->departures[j]->leavesInMins).c_str(), offsetXSecondColumn + offsetXDelay, originY + (j * rowSpace));
     }
   }
 
   epd_set_en_font(ASCII48);
-  epd_disp_string(timeAsString(&currentTime).c_str(), 670, 5);
+  epd_disp_string(formatTime(&currentTime).c_str(), 670, 5);
 }
 
 int sort_ascending(const void *a, const void *b) {
@@ -153,7 +162,7 @@ int sort_ascending(const void *a, const void *b) {
   Departure *ib = *(Departure **) b;
 
   // TODO: Implement time compare function instead of relying on string comparision
-  return strcmp(timeAsString(ia->departureDateTime).c_str(), timeAsString(ib->departureDateTime).c_str());
+  return strcmp(formatTime(ia->departureDateTime).c_str(), formatTime(ib->departureDateTime).c_str());
 }
 
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB) {
@@ -222,12 +231,26 @@ void logMessage(String message) {
   #endif
 }
 
-String timeAsString(time_t *theTime) {
-  return String(String(localtime(theTime)->tm_hour) + ":" + String(localtime(theTime)->tm_min));
+String formatTime(time_t *theTime) {
+  String hour = String(localtime(theTime)->tm_hour);
+  String minutes = String(localtime(theTime)->tm_min);
+  if (hour.length() == 1) {
+    hour = String("0" + hour);
+  }
+  if (minutes.length() == 1) {
+    minutes = String("0" + minutes);
+  }
+  return String(hour + ":" + minutes);
 }
 
-String minAsString(int delayInMinutes) {
-  return String("+") + String(delayInMinutes);
+String formatLeavesInMins(int leavesInMins) {
+  if (leavesInMins == 0) {
+    return String("< 1 min");
+  }
+  if (leavesInMins == 1) {
+     return String("in einer Minute");
+  }
+  return String("in ") + String(leavesInMins) + String(" Minuten");
 }
 
 // Copied from https://github.com/zenmanenergy/ESP8266-Arduino-Examples/blob/master/helloWorld_urlencoded/urlencode.ino
