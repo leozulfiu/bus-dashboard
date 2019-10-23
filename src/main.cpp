@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <epd.h>
 #include <ArduinoJson.h>
 #include <ESP8266WiFi.h>
@@ -56,6 +57,7 @@ void setup(void) {
   draw_time_values(allDepartureData, currentTime);
   
   epd_udpate();
+  ESP.deepSleep(0);
   // shutdown
 }
 
@@ -96,7 +98,7 @@ NextDepartures *fetch_departure_times(String from, String to) {
       memcpy(nextDepartures->departures[i]->departureDateTime, &parsedDT, sizeof(time_t));
 
       departureDelay.remove(0, 1); // remove plus
-      nextDepartures->departures[i]->departureDelay = strtol(departureDelay.c_str(), NULL, 10);
+      nextDepartures->departures[i]->departureDelay = strtol(departureDelay.c_str(), nullptr, 10);
     }
   } else {
     logMessage("Error while fetching.");
