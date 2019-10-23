@@ -1,6 +1,7 @@
 .pio
 CMakeListsPrivate.txt
-/cmake-build-nodemcuv2
+/cmake-build-nodemcuv2/CMakeFiles
+./.idea/workspace.xml
 
 # Compiled source #
 ###################
