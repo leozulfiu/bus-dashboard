@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lezu/code/bus-dashboard2
+CMAKE_SOURCE_DIR = /Users/lezu/code/bus-dashboard
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2
+CMAKE_BINARY_DIR = /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2/CMakeFiles /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/CMakeFiles /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

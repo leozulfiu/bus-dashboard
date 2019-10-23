@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lezu/code/bus-dashboard2
+CMAKE_SOURCE_DIR = /Users/lezu/code/bus-dashboard
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2
+CMAKE_BINARY_DIR = /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2
 
 # Utility rule file for PLATFORMIO_PROGRAM.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2
 include CMakeFiles/PLATFORMIO_PROGRAM.dir/progress.make
 
 CMakeFiles/PLATFORMIO_PROGRAM:
-	cd /Users/lezu/code/bus-dashboard2 && /usr/local/bin/platformio -f -c clion run --target program -enodemcuv2
+	cd /Users/lezu/code/bus-dashboard && /usr/local/bin/platformio -f -c clion run --target program -enodemcuv2
 
 PLATFORMIO_PROGRAM: CMakeFiles/PLATFORMIO_PROGRAM
 PLATFORMIO_PROGRAM: CMakeFiles/PLATFORMIO_PROGRAM.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/PLATFORMIO_PROGRAM.dir/clean:
 .PHONY : CMakeFiles/PLATFORMIO_PROGRAM.dir/clean
 
 CMakeFiles/PLATFORMIO_PROGRAM.dir/depend:
-	cd /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lezu/code/bus-dashboard2 /Users/lezu/code/bus-dashboard2 /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2 /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2 /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2/CMakeFiles/PLATFORMIO_PROGRAM.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lezu/code/bus-dashboard /Users/lezu/code/bus-dashboard /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2 /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2 /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/CMakeFiles/PLATFORMIO_PROGRAM.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PLATFORMIO_PROGRAM.dir/depend
 

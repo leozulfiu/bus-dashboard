@@ -43,10 +43,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lezu/code/bus-dashboard2
+CMAKE_SOURCE_DIR = /Users/lezu/code/bus-dashboard
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2
+CMAKE_BINARY_DIR = /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2
 
 # Utility rule file for PLATFORMIO_DEVICE_LIST.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2
 include CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/progress.make
 
 CMakeFiles/PLATFORMIO_DEVICE_LIST:
-	cd /Users/lezu/code/bus-dashboard2 && /usr/local/bin/platformio -f -c clion device list
+	cd /Users/lezu/code/bus-dashboard && /usr/local/bin/platformio -f -c clion device list
 
 PLATFORMIO_DEVICE_LIST: CMakeFiles/PLATFORMIO_DEVICE_LIST
 PLATFORMIO_DEVICE_LIST: CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/clean:
 .PHONY : CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/clean
 
 CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/depend:
-	cd /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lezu/code/bus-dashboard2 /Users/lezu/code/bus-dashboard2 /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2 /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2 /Users/lezu/code/bus-dashboard2/cmake-build-nodemcuv2/CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lezu/code/bus-dashboard /Users/lezu/code/bus-dashboard /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2 /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2 /Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PLATFORMIO_DEVICE_LIST.dir/depend
 
