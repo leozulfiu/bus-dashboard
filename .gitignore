@@ -2,6 +2,7 @@
 CMakeListsPrivate.txt
 /cmake-build-nodemcuv2/CMakeFiles
 ./.idea/workspace.xml
+./.idea/.name
 
 # Compiled source #
 ###################
