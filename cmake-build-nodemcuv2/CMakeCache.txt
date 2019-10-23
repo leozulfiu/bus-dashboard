@@ -166,7 +166,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=bus-dashboard2
+CMAKE_PROJECT_NAME:STATIC=bus-dashboard
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ranlib
@@ -243,6 +243,12 @@ bus-dashboard2_BINARY_DIR:STATIC=/Users/lezu/code/bus-dashboard/cmake-build-node
 
 //Value Computed by CMake
 bus-dashboard2_SOURCE_DIR:STATIC=/Users/lezu/code/bus-dashboard
+
+//Value Computed by CMake
+bus-dashboard_BINARY_DIR:STATIC=/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2
+
+//Value Computed by CMake
+bus-dashboard_SOURCE_DIR:STATIC=/Users/lezu/code/bus-dashboard
 
 
 ########################
