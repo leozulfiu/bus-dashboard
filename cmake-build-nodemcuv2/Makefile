@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named bus-dashboard
+
+# Build rule for target.
+bus-dashboard: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bus-dashboard
+.PHONY : bus-dashboard
+
+# fast build rule for target.
+bus-dashboard/fast:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/build
+.PHONY : bus-dashboard/fast
+
+#=============================================================================
 # Target rules for targets named PLATFORMIO_BUILD
 
 # Build rule for target.
@@ -187,19 +200,6 @@ PLATFORMIO_UPLOADFS: cmake_check_build_system
 PLATFORMIO_UPLOADFS/fast:
 	$(MAKE) -f CMakeFiles/PLATFORMIO_UPLOADFS.dir/build.make CMakeFiles/PLATFORMIO_UPLOADFS.dir/build
 .PHONY : PLATFORMIO_UPLOADFS/fast
-
-#=============================================================================
-# Target rules for targets named bus-dashboard
-
-# Build rule for target.
-bus-dashboard: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bus-dashboard
-.PHONY : bus-dashboard
-
-# fast build rule for target.
-bus-dashboard/fast:
-	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/build
-.PHONY : bus-dashboard/fast
 
 #=============================================================================
 # Target rules for targets named PLATFORMIO_TEST
@@ -4350,6 +4350,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... bus-dashboard"
 	@echo "... rebuild_cache"
 	@echo "... PLATFORMIO_BUILD"
 	@echo "... PLATFORMIO_DEVICE_LIST"
@@ -4357,7 +4358,6 @@ help:
 	@echo "... PLATFORMIO_PROGRAM"
 	@echo "... PLATFORMIO_UPDATE_ALL"
 	@echo "... PLATFORMIO_UPLOADFS"
-	@echo "... bus-dashboard"
 	@echo "... PLATFORMIO_TEST"
 	@echo "... PLATFORMIO_UPLOAD"
 	@echo "... PLATFORMIO_CLEAN"
