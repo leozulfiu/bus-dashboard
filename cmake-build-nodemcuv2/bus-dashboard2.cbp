@@ -1,0 +1,1336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="bus-dashboard2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_BUILD">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_BUILD"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_DEVICE_LIST">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_DEVICE_LIST"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_REBUILD_PROJECT_INDEX">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_REBUILD_PROJECT_INDEX"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_PROGRAM">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_PROGRAM"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_UPDATE_ALL">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_UPDATE_ALL"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_UPLOADFS">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_UPLOADFS"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bus-dashboard2">
+				<Option output="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/bus-dashboard2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/lezu/code/bus-dashboard/include"/>
+					<Add directory="/Users/lezu/code/bus-dashboard/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+					<Add directory="/Users/lezu/code/bus-dashboard/lib/LibraryEPD"/>
+					<Add directory="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/tools/sdk/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/tools/sdk/libc/xtensa-lx106-elf/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/cores/esp8266"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/tools/sdk/lwip2/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/variants/nodemcu"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ArduinoOTA"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/EEPROM"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266AVRISP/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPUpdateServer/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266LLMNR"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266NetBIOS"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266SSDP"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266SdFat/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFiMesh/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266httpUpdate/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Ethernet/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/GDBStub/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Hash/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SD/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SDFS/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SPI"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SPISlave/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Servo/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SoftwareSerial/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/TFT_Touch_Shield_V2"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/esp8266/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/xtensa-lx106-elf/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/xtensa-lx106-elf/include/c++/4.8.2"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/xtensa-lx106-elf/include/c++/4.8.2/xtensa-lx106-elf"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/lib/gcc/xtensa-lx106-elf/4.8.2/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/lib/gcc/xtensa-lx106-elf/4.8.2/include-fixed"/>
+					<Add directory="/Users/lezu/.platformio/packages/tool-unity"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 bus-dashboard2"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bus-dashboard2/fast">
+				<Option output="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/bus-dashboard2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/lezu/code/bus-dashboard/include"/>
+					<Add directory="/Users/lezu/code/bus-dashboard/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFi/src"/>
+					<Add directory="/Users/lezu/code/bus-dashboard/lib/LibraryEPD"/>
+					<Add directory="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/tools/sdk/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/tools/sdk/libc/xtensa-lx106-elf/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/cores/esp8266"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/tools/sdk/lwip2/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/variants/nodemcu"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ArduinoOTA"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/DNSServer/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/EEPROM"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266AVRISP/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPUpdateServer/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266LLMNR"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266NetBIOS"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266SSDP"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266SdFat/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WebServer/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266WiFiMesh/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266httpUpdate/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266mDNS/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Ethernet/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/GDBStub/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Hash/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SD/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SDFS/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SPI"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SPISlave/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Servo/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/SoftwareSerial/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/TFT_Touch_Shield_V2"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Ticker"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/Wire"/>
+					<Add directory="/Users/lezu/.platformio/packages/framework-arduinoespressif8266/libraries/esp8266/src"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/xtensa-lx106-elf/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/xtensa-lx106-elf/include/c++/4.8.2"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/xtensa-lx106-elf/include/c++/4.8.2/xtensa-lx106-elf"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/lib/gcc/xtensa-lx106-elf/4.8.2/include"/>
+					<Add directory="/Users/lezu/.platformio/packages/toolchain-xtensa/lib/gcc/xtensa-lx106-elf/4.8.2/include-fixed"/>
+					<Add directory="/Users/lezu/.platformio/packages/tool-unity"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 bus-dashboard2/fast"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_TEST">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_TEST"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_UPLOAD">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_UPLOAD"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_CLEAN">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_CLEAN"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_BUILD_VERBOSE">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_BUILD_VERBOSE"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PLATFORMIO_MONITOR">
+				<Option working_dir="/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 PLATFORMIO_MONITOR"/>
+					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/lezu/code/bus-dashboard/cmake-build-nodemcuv2/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/.clang-format">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/.gitattributes">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/.github/FUNDING.yml">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/.github/ISSUE_TEMPLATE.md">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/.gitignore">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/.library.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/.mbedignore">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/.travis.yml">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/ArduinoJson.h">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/CHANGELOG.md">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/CONTRIBUTING.md">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/LICENSE.md">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/README.md">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/SUPPORT.md">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/appveyor.yml">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/banner.svg">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/examples/JsonConfigFile/JsonConfigFile.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/examples/JsonGeneratorExample/JsonGeneratorExample.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/examples/JsonHttpClient/JsonHttpClient.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/examples/JsonParserExample/JsonParserExample.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/examples/JsonServer/JsonServer.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/examples/JsonUdpBeacon/JsonUdpBeacon.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/examples/MsgPackParser/MsgPackParser.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/examples/ProgmemExample/ProgmemExample.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/examples/StringExample/StringExample.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/ci/arduino.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/ci/build.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/ci/coverage.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/ci/fuzz.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/ci/platformio.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/ci/test.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/fuzzer_main.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_corpus/.gitignore">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_fuzzer.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_seed_corpus/Comments.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_seed_corpus/EmptyArray.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_seed_corpus/EmptyObject.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_seed_corpus/ExcessiveNesting.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_seed_corpus/IntegerOverflow.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_seed_corpus/Numbers.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_seed_corpus/OpenWeatherMap.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_seed_corpus/Strings.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/json_seed_corpus/WeatherUnderground.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/msgpack_corpus/.gitignore">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/fuzzing/msgpack_fuzzer.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/scripts/build-arduino-package.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/scripts/build-single-header.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/scripts/create-build-envs.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/scripts/publish-particle-library.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/scripts/publish.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/scripts/wandbox/JsonGeneratorExample.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/scripts/wandbox/JsonParserExample.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/scripts/wandbox/MsgPackParserExample.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/scripts/wandbox/publish.sh">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/ElementProxy/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/ElementProxy/add.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/ElementProxy/clear.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/ElementProxy/compare.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/ElementProxy/remove.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/ElementProxy/set.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/ElementProxy/size.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/IntegrationTests/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/IntegrationTests/gbathree.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/IntegrationTests/issue772.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/IntegrationTests/round_trip.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/add.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/copyArray.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/createNested.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/equals.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/get.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/isNull.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/iterator.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/memoryUsage.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/nesting.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/remove.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/size.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/std_string.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/subscript.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonArray/undefined.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/DeserializationError.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/array.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/array_static.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/incomplete_input.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/input_types.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/invalid_input.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/misc.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/nestingLimit.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/number.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/object.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/object_static.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDeserializer/string.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/BasicJsonDocument.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/DynamicJsonDocument.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/StaticJsonDocument.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/add.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/compare.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/containsKey.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/createNested.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/isNull.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/nesting.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/remove.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/size.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonDocument/subscript.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/containsKey.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/copy.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/createNestedArray.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/createNestedObject.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/equals.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/invalid.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/isNull.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/iterator.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/memoryUsage.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/nesting.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/remove.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/size.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/std_string.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonObject/subscript.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonSerializer/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonSerializer/JsonArray.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonSerializer/JsonArrayPretty.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonSerializer/JsonObject.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonSerializer/JsonObjectPretty.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonSerializer/JsonVariant.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonSerializer/misc.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonSerializer/std_stream.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonSerializer/std_string.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/add.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/as.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/clear.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/compare.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/containsKey.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/copy.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/createNested.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/is.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/isnull.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/memoryUsage.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/misc.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/nesting.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/or.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/overflow.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/remove.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/set.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/subscript.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/types.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/JsonVariant/undefined.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemberProxy/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemberProxy/add.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemberProxy/clear.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemberProxy/compare.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemberProxy/containsKey.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemberProxy/remove.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemberProxy/set.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemberProxy/size.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemberProxy/subscript.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemoryPool/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemoryPool/StringBuilder.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemoryPool/allocString.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemoryPool/allocVariant.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemoryPool/clear.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MemoryPool/size.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/FloatParts.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/Issue978.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/StreamReader.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/StringAdapters.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/StringWriter.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/TypeTraits.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/conflicts.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/custom_string.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/unsigned_char.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Misc/version.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/cpp11.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/decode_unicode_0.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/decode_unicode_1.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/enable_infinity_0.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/enable_infinity_1.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/enable_nan_0.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/enable_nan_1.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/enable_progmem_1.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/progmem_emulation.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/use_double_0.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/use_double_1.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/use_long_long_0.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MixedConfiguration/use_long_long_1.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/deserializeArray.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/deserializeObject.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/deserializeStaticVariant.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/deserializeVariant.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/doubleToFloat.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/incompleteInput.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/input_types.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/nestingLimit.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackDeserializer/notSupported.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackSerializer/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackSerializer/destination_types.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackSerializer/measure.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackSerializer/misc.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackSerializer/serializeArray.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackSerializer/serializeObject.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/MsgPackSerializer/serializeVariant.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Numbers/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Numbers/parseFloat.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Numbers/parseInteger.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/Numbers/parseNumber.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/TextFormatter/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/TextFormatter/writeFloat.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/TextFormatter/writeString.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/catch/CMakeLists.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/catch/catch.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/extras/tests/catch/catch.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/keywords.txt">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/library.json">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/library.properties">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson.h">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Array/ArrayFunctions.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Array/ArrayImpl.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Array/ArrayIterator.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Array/ArrayRef.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Array/ArrayShortcuts.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Array/ElementProxy.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Array/Utilities.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Collection/CollectionData.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Collection/CollectionImpl.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Configuration.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Deserialization/ArduinoStreamReader.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Deserialization/CharPointerReader.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Deserialization/DeserializationError.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Deserialization/FlashStringReader.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Deserialization/IteratorReader.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Deserialization/NestingLimit.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Deserialization/StdStreamReader.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Deserialization/deserialize.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Document/BasicJsonDocument.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Document/DynamicJsonDocument.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Document/JsonDocument.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Document/StaticJsonDocument.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Json/EscapeSequence.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Json/JsonDeserializer.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Json/JsonSerializer.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Json/PrettyJsonSerializer.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Json/TextFormatter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Json/Utf8.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Memory/Alignment.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Memory/MemoryPool.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Memory/StringBuilder.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Memory/StringSlot.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Misc/SerializedValue.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Misc/Visitable.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/MsgPack/MsgPackDeserializer.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/MsgPack/MsgPackSerializer.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/MsgPack/endianess.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/MsgPack/ieee754.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Namespace.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Numbers/Float.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Numbers/FloatParts.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Numbers/FloatTraits.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Numbers/Integer.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Numbers/convertNumber.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Numbers/parseFloat.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Numbers/parseInteger.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Numbers/parseNumber.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Object/MemberProxy.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Object/ObjectFunctions.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Object/ObjectImpl.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Object/ObjectIterator.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Object/ObjectRef.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Object/ObjectShortcuts.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Object/Pair.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Operators/VariantCasts.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Operators/VariantComparisons.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Operators/VariantOperators.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Operators/VariantOr.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Operators/VariantShortcuts.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/alias_cast.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/assert.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/attributes.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/ctype.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/gsl/not_null.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/limits.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/math.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/mpl/max.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/pgmspace.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/safe_strcmp.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/conditional.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/enable_if.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/integral_constant.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/is_array.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/is_base_of.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/is_const.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/is_floating_point.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/is_integral.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/is_same.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/is_signed.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/is_unsigned.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/make_unsigned.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/remove_const.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/remove_reference.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/type_traits/type_identity.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Polyfills/utility.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Serialization/DummyWriter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Serialization/DynamicStringWriter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Serialization/StaticStringWriter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Serialization/StreamWriter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Serialization/measure.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Serialization/serialize.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/StringStorage/StringCopier.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/StringStorage/StringMover.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/StringStorage/StringStorage.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Strings/ArduinoStringAdapter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Strings/ConstRamStringAdapter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Strings/FlashStringAdapter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Strings/RamStringAdapter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Strings/SizedFlashStringAdapter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Strings/SizedRamStringAdapter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Strings/StlStringAdapter.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Strings/String.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Strings/StringAdapters.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/SlotFunctions.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/VariantAs.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/VariantAsImpl.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/VariantContent.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/VariantData.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/VariantFunctions.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/VariantImpl.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/VariantRef.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/VariantSlot.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/Variant/VariantTo.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/compatibility.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/.pio/libdeps/nodemcuv2/ArduinoJson_ID64/src/ArduinoJson/version.hpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/lib/LibraryEPD/README.md">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/lib/LibraryEPD/epd.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/lib/LibraryEPD/epd.h">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/lib/LibraryEPD/epd.h.gch">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/lib/LibraryEPD/examples/Arduino-epd/Arduino-epd.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/lib/LibraryEPD/examples/esp8266-epd/esp8266-epd.ino">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/lib/LibraryEPD/library.properties">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/src/.DS_Store">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/src/main.cpp">
+			<Option target="bus-dashboard2"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/lezu/code/bus-dashboard/CMakeListsPrivate.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
