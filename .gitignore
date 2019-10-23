@@ -1,7 +1,7 @@
 .pio
 CMakeListsPrivate.txt
 /cmake-build-nodemcuv2/CMakeFiles
-/cmake-build-nodemcuv2/bus-dashboard2.cbp
+/cmake-build-nodemcuv2/bus-dashboard.cbp
 ./.idea/workspace.xml
 ./.idea/.name
 
