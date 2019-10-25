@@ -4343,6 +4343,33 @@ src/ConnectionInput.cpp.s:
 	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/ConnectionInput.cpp.s
 .PHONY : src/ConnectionInput.cpp.s
 
+src/Departure.o: src/Departure.cpp.o
+
+.PHONY : src/Departure.o
+
+# target to build an object file
+src/Departure.cpp.o:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/Departure.cpp.o
+.PHONY : src/Departure.cpp.o
+
+src/Departure.i: src/Departure.cpp.i
+
+.PHONY : src/Departure.i
+
+# target to preprocess a source file
+src/Departure.cpp.i:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/Departure.cpp.i
+.PHONY : src/Departure.cpp.i
+
+src/Departure.s: src/Departure.cpp.s
+
+.PHONY : src/Departure.s
+
+# target to generate assembly for a file
+src/Departure.cpp.s:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/Departure.cpp.s
+.PHONY : src/Departure.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -4843,6 +4870,9 @@ help:
 	@echo "... src/ConnectionInput.o"
 	@echo "... src/ConnectionInput.i"
 	@echo "... src/ConnectionInput.s"
+	@echo "... src/Departure.o"
+	@echo "... src/Departure.i"
+	@echo "... src/Departure.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

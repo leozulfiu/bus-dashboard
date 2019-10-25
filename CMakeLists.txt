@@ -80,4 +80,4 @@ add_custom_target(
     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_executable(${PROJECT_NAME} ${SRC_LIST} src/ConnectionInput.cpp src/ConnectionInput.h)
+add_executable(${PROJECT_NAME} ${SRC_LIST} src/ConnectionInput.cpp src/ConnectionInput.h src/Departure.cpp src/Departure.h)

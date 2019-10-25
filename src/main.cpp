@@ -5,6 +5,7 @@
 #include <ESP8266HTTPClient.h>
 #include <string>
 #include "ConnectionInput.h"
+#include "Departure.h"
 
 using namespace std;
 
@@ -13,12 +14,6 @@ const char *ssid = "***";
 const char *password = "***";
 
 // -----------------------------------------------------------------------
-typedef struct {
-    time_t *departureDateTime;
-    int departureDelay;
-    int leavesInMins;
-} Departure;
-
 typedef struct {
     Departure *departures[3];
 } NextDepartures;
@@ -39,8 +34,6 @@ void calculateArrivalTimes(NextDepartures **allData, time_t currentTime);
 void initialize_wifi();
 
 String formatTime(time_t *theTime);
-
-String formatLeavesInMins(int leavesInMins);
 
 void logMessage(const String& message);
 
@@ -101,18 +94,9 @@ NextDepartures *fetch_departure_times(ConnectionInput connectionInput) {
             }
             nextDepartures->departures[i] = (Departure *) malloc(sizeof(Departure));
             JsonObject connection = connections[i];
-            String departureDateTime = connection["departure"];
-            String departureDelay = connection["departure_delay"];
 
-            // Example: 2019-08-15 18:17:00
-            nextDepartures->departures[i]->departureDateTime = (time_t *) malloc(sizeof(time_t));
-            struct tm rawDT = {0};
-            strptime(departureDateTime.c_str(), "%Y-%m-%d %T", &rawDT);
-            time_t parsedDT = mktime(&rawDT);
-            memcpy(nextDepartures->departures[i]->departureDateTime, &parsedDT, sizeof(time_t));
-
-            departureDelay.remove(0, 1); // remove plus
-            nextDepartures->departures[i]->departureDelay = strtol(departureDelay.c_str(), nullptr, 10);
+            Departure departure(connection["departure"], connection["departure_delay"]);
+            memcpy(nextDepartures->departures[i], &departure, sizeof(Departure));
         }
     } else {
         logMessage("Error while fetching.");
@@ -133,7 +117,7 @@ NextDepartures *fetch_merged_times(const String& from, const String& toDestinati
 void calculateArrivalTimes(NextDepartures **allData, time_t currentTime) {
     for (int i = 0; i < 6; i++) {
         for (int j = 0; j < 3; j++) {
-            double diffSeconds = difftime(*allData[i]->departures[j]->departureDateTime, currentTime);
+            double diffSeconds = difftime(allData[i]->departures[j]->departureDateTime, currentTime);
             diffSeconds += allData[i]->departures[j]->departureDelay;
             int diffMinutes = (int) floor(diffSeconds / 60);
 
@@ -162,15 +146,15 @@ void draw_time_values(NextDepartures **allData, time_t currentTime) {
             int originY = (i / 2 * 190) + 95;
 
             //first column
-            epd_disp_string(formatTime(allData[i]->departures[j]->departureDateTime).c_str(), offsetXFirstColumn,
+            epd_disp_string(formatTime(&allData[i]->departures[j]->departureDateTime).c_str(), offsetXFirstColumn,
                             originY + (j * rowSpace));
-            epd_disp_string(formatLeavesInMins(allData[i]->departures[j]->leavesInMins).c_str(),
+            epd_disp_string(allData[i]->departures[j]->formatLeavesInMins().c_str(),
                             offsetXFirstColumn + offsetXDelay, originY + (j * rowSpace));
 
             //second column
-            epd_disp_string(formatTime(allData[i + 1]->departures[j]->departureDateTime).c_str(), offsetXSecondColumn,
+            epd_disp_string(formatTime(&allData[i + 1]->departures[j]->departureDateTime).c_str(), offsetXSecondColumn,
                             originY + (j * rowSpace));
-            epd_disp_string(formatLeavesInMins(allData[i + 1]->departures[j]->leavesInMins).c_str(),
+            epd_disp_string(allData[i + 1]->departures[j]->formatLeavesInMins().c_str(),
                             offsetXSecondColumn + offsetXDelay, originY + (j * rowSpace));
         }
     }
@@ -184,7 +168,7 @@ int sort_ascending(const void *a, const void *b) {
     Departure *ib = *(Departure **) b;
 
     // TODO: Implement time compare function instead of relying on string comparision
-    return strcmp(formatTime(ia->departureDateTime).c_str(), formatTime(ib->departureDateTime).c_str());
+    return strcmp(formatTime(&ia->departureDateTime).c_str(), formatTime(&ib->departureDateTime).c_str());
 }
 
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB) {
@@ -265,14 +249,4 @@ String formatTime(time_t *theTime) {
     const String &bla = String(hour + ":" + minutes);
     logMessage(bla);
     return bla;
-}
-
-String formatLeavesInMins(int leavesInMins) {
-    if (leavesInMins == 0) {
-        return String("< 1 min");
-    }
-    if (leavesInMins == 1) {
-        return String("in einer Minute");
-    }
-    return String("in ") + String(leavesInMins) + String(" Minuten");
 }
