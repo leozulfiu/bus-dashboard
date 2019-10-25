@@ -19,9 +19,9 @@ typedef struct {
 } NextDepartures;
 
 
-NextDepartures *fetch_departure_times(ConnectionInput connection);
+NextDepartures *fetch_departure(ConnectionInput connection);
 
-NextDepartures *fetch_merged_times(const String& from, const String& toDestinationA, const String& toDestinationB);
+NextDepartures *fetch_merged_departure(const String& from, const String& toDestinationA, const String& toDestinationB);
 
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB);
 
@@ -48,12 +48,12 @@ void setup(void) {
     initialize_wifi();
 
     NextDepartures *allDepartureData[] = {
-            fetch_departure_times(ConnectionInput("Zürich, Schumacherweg", "Zürich, Triemlispital")),
-            fetch_departure_times(ConnectionInput("Zürich, Schumacherweg", "Zürich, Bahnhof Oerlikon Nord")),
-            fetch_departure_times(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Strassenverkehrsamt")),
-            fetch_departure_times(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Holzerhurd")),
-            fetch_departure_times(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Schwamendingerplatz")),
-            fetch_merged_times("Zürich, Glaubtenstrasse", "Zürich, Waidhof", "Zürich, Mühlacker")
+            fetch_departure(ConnectionInput("Zürich, Schumacherweg", "Zürich, Triemlispital")),
+            fetch_departure(ConnectionInput("Zürich, Schumacherweg", "Zürich, Bahnhof Oerlikon Nord")),
+            fetch_departure(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Strassenverkehrsamt")),
+            fetch_departure(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Holzerhurd")),
+            fetch_departure(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Schwamendingerplatz")),
+            fetch_merged_departure("Zürich, Glaubtenstrasse", "Zürich, Waidhof", "Zürich, Mühlacker")
     };
 
     time_t currentTime = fetchCurrentTime("Europe/Zurich");
@@ -71,10 +71,10 @@ void loop(void) {}
 
 // -----------------------------------------------------------------------
 
-NextDepartures *fetch_departure_times(ConnectionInput connectionInput) {
+NextDepartures *fetch_departure(ConnectionInput connectionInput) {
     HTTPClient http;
     string url = "http://bananas.cloud.tyk.io/transport?from=" + connectionInput.fromAsEncoded() +
-            "&to=" + connectionInput.toAsEncoded() + "&num=3&show_delays=1";
+                 "&to=" + connectionInput.toAsEncoded() + "&num=3&show_delays=1";
     http.begin(String(url.c_str()));
 
     auto *nextDepartures = (NextDepartures *) malloc(sizeof(NextDepartures));
@@ -106,10 +106,10 @@ NextDepartures *fetch_departure_times(ConnectionInput connectionInput) {
     return nextDepartures;
 }
 
-NextDepartures *fetch_merged_times(const String& from, const String& toDestinationA, const String& toDestinationB) {
-    NextDepartures *departuresToDestinationA = fetch_departure_times(
+NextDepartures *fetch_merged_departure(const String& from, const String& toDestinationA, const String& toDestinationB) {
+    NextDepartures *departuresToDestinationA = fetch_departure(
             ConnectionInput(from.c_str(), toDestinationA.c_str()));
-    NextDepartures *departuresToDestinationB = fetch_departure_times(
+    NextDepartures *departuresToDestinationB = fetch_departure(
             ConnectionInput(from.c_str(), toDestinationB.c_str()));
     return merge_departures(departuresToDestinationA, departuresToDestinationB);
 }
