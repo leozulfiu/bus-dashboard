@@ -4316,6 +4316,33 @@ lib/LibraryEPD/epd.cpp.s:
 	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/lib/LibraryEPD/epd.cpp.s
 .PHONY : lib/LibraryEPD/epd.cpp.s
 
+src/ConnectionInput.o: src/ConnectionInput.cpp.o
+
+.PHONY : src/ConnectionInput.o
+
+# target to build an object file
+src/ConnectionInput.cpp.o:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/ConnectionInput.cpp.o
+.PHONY : src/ConnectionInput.cpp.o
+
+src/ConnectionInput.i: src/ConnectionInput.cpp.i
+
+.PHONY : src/ConnectionInput.i
+
+# target to preprocess a source file
+src/ConnectionInput.cpp.i:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/ConnectionInput.cpp.i
+.PHONY : src/ConnectionInput.cpp.i
+
+src/ConnectionInput.s: src/ConnectionInput.cpp.s
+
+.PHONY : src/ConnectionInput.s
+
+# target to generate assembly for a file
+src/ConnectionInput.cpp.s:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/ConnectionInput.cpp.s
+.PHONY : src/ConnectionInput.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -4813,6 +4840,9 @@ help:
 	@echo "... lib/LibraryEPD/epd.o"
 	@echo "... lib/LibraryEPD/epd.i"
 	@echo "... lib/LibraryEPD/epd.s"
+	@echo "... src/ConnectionInput.o"
+	@echo "... src/ConnectionInput.i"
+	@echo "... src/ConnectionInput.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
