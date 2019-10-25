@@ -22,11 +22,12 @@ typedef struct {
 NextDepartures *fetch_departure(ConnectionInput connectionInput, const time_t *currentTime);
 
 NextDepartures *
-fetch_merged_departure(const String &from, const String &toDestinationA, const String &toDestinationB, time_t *currentTime);
+fetch_merged_departure(const String &from, const String &toDestinationA, const String &toDestinationB,
+                       time_t *currentTime);
 
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB);
 
-time_t fetchCurrentTime(const String& timezone);
+time_t fetchCurrentTime(const String &timezone);
 
 void draw_time_values(NextDepartures **allData, time_t currentTime);
 
@@ -34,7 +35,7 @@ void initialize_wifi();
 
 String formatTime(time_t *theTime);
 
-void logMessage(const String& message);
+void logMessage(const String &message);
 
 // -----------------------------------------------------------------------
 
@@ -103,7 +104,8 @@ NextDepartures *fetch_departure(ConnectionInput connectionInput, const time_t *c
     return nextDepartures;
 }
 
-NextDepartures *fetch_merged_departure(const String &from, const String &toDestinationA, const String &toDestinationB, time_t *currentTime) {
+NextDepartures *fetch_merged_departure(const String &from, const String &toDestinationA, const String &toDestinationB,
+                                       time_t *currentTime) {
     NextDepartures *departuresToDestinationA = fetch_departure(
             ConnectionInput(from.c_str(), toDestinationA.c_str()), currentTime);
     NextDepartures *departuresToDestinationB = fetch_departure(
@@ -177,7 +179,7 @@ NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures 
     return mergedNextDepartures;
 }
 
-time_t fetchCurrentTime(const String& timezone) {
+time_t fetchCurrentTime(const String &timezone) {
     HTTPClient http;
     String url = "http://worldtimeapi.org/api/timezone/" + timezone;
     http.begin(url);
@@ -213,7 +215,7 @@ void initialize_wifi() {
     }
 }
 
-void logMessage(const String& message) {
+void logMessage(const String &message) {
 #ifdef TESTING
     Serial.println(message);
 #endif
