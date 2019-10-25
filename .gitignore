@@ -2,8 +2,8 @@
 CMakeListsPrivate.txt
 /cmake-build-nodemcuv2/CMakeFiles
 /cmake-build-nodemcuv2/bus-dashboard.cbp
-./.idea/workspace.xml
-./.idea/.name
+/.idea/workspace.xml
+/.idea/.name
 
 # Compiled source #
 ###################
