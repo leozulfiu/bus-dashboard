@@ -19,17 +19,16 @@ typedef struct {
 } NextDepartures;
 
 
-NextDepartures *fetch_departure(ConnectionInput connection);
+NextDepartures *fetch_departure(ConnectionInput connectionInput, const time_t *currentTime);
 
-NextDepartures *fetch_merged_departure(const String& from, const String& toDestinationA, const String& toDestinationB);
+NextDepartures *
+fetch_merged_departure(const String &from, const String &toDestinationA, const String &toDestinationB, time_t *currentTime);
 
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB);
 
 time_t fetchCurrentTime(const String& timezone);
 
 void draw_time_values(NextDepartures **allData, time_t currentTime);
-
-void calculateArrivalTimes(NextDepartures **allData, time_t currentTime);
 
 void initialize_wifi();
 
@@ -47,18 +46,16 @@ void setup(void) {
 
     initialize_wifi();
 
-    NextDepartures *allDepartureData[] = {
-            fetch_departure(ConnectionInput("Zürich, Schumacherweg", "Zürich, Triemlispital")),
-            fetch_departure(ConnectionInput("Zürich, Schumacherweg", "Zürich, Bahnhof Oerlikon Nord")),
-            fetch_departure(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Strassenverkehrsamt")),
-            fetch_departure(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Holzerhurd")),
-            fetch_departure(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Schwamendingerplatz")),
-            fetch_merged_departure("Zürich, Glaubtenstrasse", "Zürich, Waidhof", "Zürich, Mühlacker")
-    };
-
     time_t currentTime = fetchCurrentTime("Europe/Zurich");
 
-    calculateArrivalTimes(allDepartureData, currentTime);
+    NextDepartures *allDepartureData[] = {
+            fetch_departure(ConnectionInput("Zürich, Schumacherweg", "Zürich, Triemlispital"), &currentTime),
+            fetch_departure(ConnectionInput("Zürich, Schumacherweg", "Zürich, Bahnhof Oerlikon Nord"), &currentTime),
+            fetch_departure(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Strassenverkehrsamt"), &currentTime),
+            fetch_departure(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Holzerhurd"), &currentTime),
+            fetch_departure(ConnectionInput("Zürich, Glaubtenstrasse", "Zürich, Schwamendingerplatz"), &currentTime),
+            fetch_merged_departure("Zürich, Glaubtenstrasse", "Zürich, Waidhof", "Zürich, Mühlacker", &currentTime)
+    };
 
     draw_time_values(allDepartureData, currentTime);
 
@@ -71,7 +68,7 @@ void loop(void) {}
 
 // -----------------------------------------------------------------------
 
-NextDepartures *fetch_departure(ConnectionInput connectionInput) {
+NextDepartures *fetch_departure(ConnectionInput connectionInput, const time_t *currentTime) {
     HTTPClient http;
     string url = "http://bananas.cloud.tyk.io/transport?from=" + connectionInput.fromAsEncoded() +
                  "&to=" + connectionInput.toAsEncoded() + "&num=3&show_delays=1";
@@ -95,7 +92,7 @@ NextDepartures *fetch_departure(ConnectionInput connectionInput) {
             nextDepartures->departures[i] = (Departure *) malloc(sizeof(Departure));
             JsonObject connection = connections[i];
 
-            Departure departure(connection["departure"], connection["departure_delay"]);
+            Departure departure(connection["departure"], connection["departure_delay"], *currentTime);
             memcpy(nextDepartures->departures[i], &departure, sizeof(Departure));
         }
     } else {
@@ -106,28 +103,12 @@ NextDepartures *fetch_departure(ConnectionInput connectionInput) {
     return nextDepartures;
 }
 
-NextDepartures *fetch_merged_departure(const String& from, const String& toDestinationA, const String& toDestinationB) {
+NextDepartures *fetch_merged_departure(const String &from, const String &toDestinationA, const String &toDestinationB, time_t *currentTime) {
     NextDepartures *departuresToDestinationA = fetch_departure(
-            ConnectionInput(from.c_str(), toDestinationA.c_str()));
+            ConnectionInput(from.c_str(), toDestinationA.c_str()), currentTime);
     NextDepartures *departuresToDestinationB = fetch_departure(
-            ConnectionInput(from.c_str(), toDestinationB.c_str()));
+            ConnectionInput(from.c_str(), toDestinationB.c_str()), currentTime);
     return merge_departures(departuresToDestinationA, departuresToDestinationB);
-}
-
-void calculateArrivalTimes(NextDepartures **allData, time_t currentTime) {
-    for (int i = 0; i < 6; i++) {
-        for (int j = 0; j < 3; j++) {
-            double diffSeconds = difftime(allData[i]->departures[j]->departureDateTime, currentTime);
-            diffSeconds += allData[i]->departures[j]->departureDelay;
-            int diffMinutes = (int) floor(diffSeconds / 60);
-
-            if (diffMinutes <= 0) {
-                allData[i]->departures[j]->leavesInMins = 0;
-            } else {
-                allData[i]->departures[j]->leavesInMins = diffMinutes;
-            }
-        }
-    }
 }
 
 void draw_time_values(NextDepartures **allData, time_t currentTime) {
@@ -146,13 +127,13 @@ void draw_time_values(NextDepartures **allData, time_t currentTime) {
             int originY = (i / 2 * 190) + 95;
 
             //first column
-            epd_disp_string(formatTime(&allData[i]->departures[j]->departureDateTime).c_str(), offsetXFirstColumn,
+            epd_disp_string(allData[i]->departures[j]->formatDepartureTime().c_str(), offsetXFirstColumn,
                             originY + (j * rowSpace));
             epd_disp_string(allData[i]->departures[j]->formatLeavesInMins().c_str(),
                             offsetXFirstColumn + offsetXDelay, originY + (j * rowSpace));
 
             //second column
-            epd_disp_string(formatTime(&allData[i + 1]->departures[j]->departureDateTime).c_str(), offsetXSecondColumn,
+            epd_disp_string(allData[i + 1]->departures[j]->formatDepartureTime().c_str(), offsetXSecondColumn,
                             originY + (j * rowSpace));
             epd_disp_string(allData[i + 1]->departures[j]->formatLeavesInMins().c_str(),
                             offsetXSecondColumn + offsetXDelay, originY + (j * rowSpace));
@@ -168,7 +149,7 @@ int sort_ascending(const void *a, const void *b) {
     Departure *ib = *(Departure **) b;
 
     // TODO: Implement time compare function instead of relying on string comparision
-    return strcmp(formatTime(&ia->departureDateTime).c_str(), formatTime(&ib->departureDateTime).c_str());
+    return strcmp(ia->formatDepartureTime().c_str(), ib->formatDepartureTime().c_str());
 }
 
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB) {
@@ -185,11 +166,12 @@ NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures 
     int array_length = sizeof(mergedDepartures) / sizeof(mergedDepartures[0]);
     qsort(mergedDepartures, array_length, sizeof(mergedDepartures[0]), sort_ascending);
 
-    NextDepartures *mergedNextDepartures = (NextDepartures *) malloc(sizeof(NextDepartures));
+    auto *mergedNextDepartures = (NextDepartures *) malloc(sizeof(NextDepartures));
     for (int i = 0; i < 3; i++) {
         mergedNextDepartures->departures[i] = (Departure *) malloc(sizeof(Departure));
         mergedNextDepartures->departures[i]->departureDateTime = mergedDepartures[i]->departureDateTime;
         mergedNextDepartures->departures[i]->departureDelay = mergedDepartures[i]->departureDelay;
+        mergedNextDepartures->departures[i]->leavesInMins = mergedDepartures[i]->leavesInMins;
     }
 
     return mergedNextDepartures;
