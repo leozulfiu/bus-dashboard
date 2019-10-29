@@ -8,7 +8,7 @@ Departure::Departure(const String &departureDateTime, String departureDelay, tim
     this->departureDateTime = parsedDT;
 
     departureDelay.remove(0, 1); // remove plus
-    this->departureDelay = stoi(departureDelay.c_str(), nullptr, 10);
+    this->departureDelay = strtol(departureDelay.c_str(), nullptr, 10);
 
     double diffSeconds = difftime(this->departureDateTime, currentTime);
     diffSeconds += this->departureDelay;
@@ -45,5 +45,7 @@ string Departure::formatDepartureTime() {
 }
 
 string Departure::intToString(int input) {
-    return dynamic_cast<ostringstream *>(&(ostringstream() << input))->str();
+    std::stringstream stringstream;
+    stringstream << input;
+    return stringstream.str();
 }

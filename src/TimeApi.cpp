@@ -4,7 +4,7 @@ time_t TimeApi::fetchCurrentTime(const String &timezone) {
     HTTPClient http;
     String url = "http://worldtimeapi.org/api/timezone/" + timezone;
     http.begin(url);
-    time_t currentTime;
+    time_t currentTime = {0};;
 
     if (http.GET() > 0) {
         String jsonPayload = http.getString();
@@ -21,7 +21,7 @@ time_t TimeApi::fetchCurrentTime(const String &timezone) {
         currentTime = mktime(&rawDT);
     } else {
         http.end();
-        throw -1;
+        // TODO: throw -1;
     }
     http.end();
     return currentTime;

@@ -48,13 +48,7 @@ void setup(void) {
 
     initialize_wifi();
 
-    time_t currentTime;
-    try {
-        currentTime = TimeApi::fetchCurrentTime("Europe/Zurich");
-    } catch (int) {
-        reportError(3);
-        ESP.deepSleep(0);
-    }
+    time_t currentTime = TimeApi::fetchCurrentTime("Europe/Zurich");
 
     NextDepartures *allDepartureData[] = {
             fetch_departure(ConnectionInput("Zürich, Schumacherweg", "Zürich, Triemlispital"), &currentTime),
