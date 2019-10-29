@@ -4370,6 +4370,33 @@ src/Departure.cpp.s:
 	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/Departure.cpp.s
 .PHONY : src/Departure.cpp.s
 
+src/TimeApi.o: src/TimeApi.cpp.o
+
+.PHONY : src/TimeApi.o
+
+# target to build an object file
+src/TimeApi.cpp.o:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/TimeApi.cpp.o
+.PHONY : src/TimeApi.cpp.o
+
+src/TimeApi.i: src/TimeApi.cpp.i
+
+.PHONY : src/TimeApi.i
+
+# target to preprocess a source file
+src/TimeApi.cpp.i:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/TimeApi.cpp.i
+.PHONY : src/TimeApi.cpp.i
+
+src/TimeApi.s: src/TimeApi.cpp.s
+
+.PHONY : src/TimeApi.s
+
+# target to generate assembly for a file
+src/TimeApi.cpp.s:
+	$(MAKE) -f CMakeFiles/bus-dashboard.dir/build.make CMakeFiles/bus-dashboard.dir/src/TimeApi.cpp.s
+.PHONY : src/TimeApi.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -4873,6 +4900,9 @@ help:
 	@echo "... src/Departure.o"
 	@echo "... src/Departure.i"
 	@echo "... src/Departure.s"
+	@echo "... src/TimeApi.o"
+	@echo "... src/TimeApi.i"
+	@echo "... src/TimeApi.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

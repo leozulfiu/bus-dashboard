@@ -6,6 +6,7 @@
 #include <string>
 #include "ConnectionInput.h"
 #include "Departure.h"
+#include "TimeApi.h"
 
 using namespace std;
 
@@ -27,13 +28,13 @@ fetch_merged_departure(const String &from, const String &toDestinationA, const S
 
 NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures *toDestinationB);
 
-time_t fetchCurrentTime(const String &timezone);
-
 void draw_time_values(NextDepartures **allData, time_t currentTime);
 
 void initialize_wifi();
 
 String formatTime(time_t *theTime);
+
+void reportError(int blinks);
 
 void logMessage(const String &message);
 
@@ -47,7 +48,13 @@ void setup(void) {
 
     initialize_wifi();
 
-    time_t currentTime = fetchCurrentTime("Europe/Zurich");
+    time_t currentTime;
+    try {
+        currentTime = TimeApi::fetchCurrentTime("Europe/Zurich");
+    } catch (int) {
+        reportError(3);
+        ESP.deepSleep(0);
+    }
 
     NextDepartures *allDepartureData[] = {
             fetch_departure(ConnectionInput("Zürich, Schumacherweg", "Zürich, Triemlispital"), &currentTime),
@@ -179,33 +186,6 @@ NextDepartures *merge_departures(NextDepartures *toDestinationA, NextDepartures 
     return mergedNextDepartures;
 }
 
-time_t fetchCurrentTime(const String &timezone) {
-    HTTPClient http;
-    String url = "http://worldtimeapi.org/api/timezone/" + timezone;
-    http.begin(url);
-    time_t currentTime = {0};
-
-    if (http.GET() > 0) {
-        String jsonPayload = http.getString();
-        const size_t capacity = JSON_OBJECT_SIZE(15) + 350;
-        DynamicJsonDocument doc(capacity);
-        deserializeJson(doc, jsonPayload);
-
-        String currentTimestamp = doc["datetime"];
-        //Example: 2019-08-15T17:28:12.798760+02:00
-        currentTimestamp.remove(19, 13); // strip off microseconds and rest
-
-        struct tm rawDT = {0};
-        strptime(currentTimestamp.c_str(), "%Y-%m-%dT%T", &rawDT);
-        currentTime = mktime(&rawDT);
-    } else {
-        logMessage("Error while fetching.");
-        // Blink LED or something
-    }
-    http.end();
-    return currentTime;
-}
-
 void initialize_wifi() {
     // TODO: Can be split up in triggering the connection and waiting
     WiFi.begin(ssid, password);
@@ -213,6 +193,10 @@ void initialize_wifi() {
         delay(200);
         logMessage("Connecting...");
     }
+}
+
+void reportError(int blinks) {
+    // TODO: Blink LED
 }
 
 void logMessage(const String &message) {
