@@ -20,6 +20,7 @@ public:
     string toAsEncoded() {
         return ConnectionInput::encode_as_URLParam(toStation);
     }
+
 private:
     string fromStation;
     string toStation;
